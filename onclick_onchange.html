@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onClick and onChange Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #output {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Events: onClick and onChange</h2>
+
+    <button id="clickButton" onclick="handleClick()">Click Me!</button>
+
+    <br><br>
+
+    <label for="colorSelect">Choose a color:</label>
+    <select id="colorSelect" onchange="handleChange()">
+        <option value="">Select a color</option>
+        <option value="Red">Red</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+    </select>
+
+    <div id="output">Event results will appear here...</div>
+
+    <script>
+        function handleClick() {
+            document.getElementById('output').innerText = 'Button was clicked!';
+        }
+
+        function handleChange() {
+            const color = document.getElementById('colorSelect').value;
+            if (color) {
+                document.getElementById('output').innerText = `You selected: ${color}`;
+            } else {
+                document.getElementById('output').innerText = 'No color selected.';
+            }
+        }
+    </script>
+
+</body>
+</html>

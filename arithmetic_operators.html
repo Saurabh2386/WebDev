@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Form handling</h1>
+    <p><input type="text" id="no1" /></p>
+    <p><input type="text" id="no2"></p>
+    <p><button onclick="multiply()">Multiply</button></p>
+    <p><button onclick="add()">Addition</button></p>
+    <p><button onclick="sub()">Subtract</button></p>
+    <p><button onclick="divide()">divide</button></p>
+    <div id="output"></div>
+</body>
+</html>
+<script>
+    function multiply() {
+        var no1 = parseInt(document.getElementById("no1").value);
+        var no2 = parseInt(document.getElementById("no2").value);
+        var res = no1 * no2;
+        document.getElementById("output").innerText = "Multiplication is: " + res;
+    }
+    function add() {
+        var no1 = parseInt(document.getElementById("no1").value);
+        var no2 = parseInt(document.getElementById("no2").value);
+        var res = no1 + no2;
+        document.getElementById("output").innerText = "Addition is: " + res;
+    }
+    function sub() {
+        var no1 = parseInt(document.getElementById("no1").value);
+        var no2 = parseInt(document.getElementById("no2").value);
+        var res = no1 - no2;
+        document.getElementById("output").innerText = "Subtraction is: " + res;
+    }
+    function divide() {
+        var no1 = parseInt(document.getElementById("no1").value);
+        var no2 = parseInt(document.getElementById("no2").value);
+        var res = no1 / no2;
+        document.getElementById("output").innerText = "divide is: " + res;
+    }
+</script>

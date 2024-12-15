@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Else-If Ladder Example</title>
+    <script>
+        function evaluateGrade() {
+            // Get the value from the input field
+            let marks = document.getElementById("marks").value;
+            marks = parseInt(marks); // Convert the input to a number
+
+            let grade = "";
+
+            // Check the grade using if-else-if ladder
+            if (marks >= 90) {
+                grade = "A+";
+            } else if (marks >= 80) {
+                grade = "A";
+            } else if (marks >= 70) {
+                grade = "B";
+            } else if (marks >= 60) {
+                grade = "C";
+            } else if (marks >= 50) {
+                grade = "D";
+            } else if (marks >= 0) {
+                grade = "F";
+            } else {
+                grade = "Invalid Marks";
+            }
+
+            // Display the grade to the user
+            document.getElementById("result").innerText = `Your grade is: ${grade}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>If-Else-If Ladder Example</h1>
+    <p>Enter your marks to see your grade:</p>
+    <input type="number" id="marks" placeholder="Enter marks (0-100)">
+    <button onclick="evaluateGrade()">Check Grade</button>
+    <p id="result" style="font-weight: bold;"></p>
+</body>
+</html>

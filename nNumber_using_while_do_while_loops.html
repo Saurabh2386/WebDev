@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Natural Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            white-space: pre-line;
+            font-size: 18px;
+            color: #333;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Display Natural Numbers</h1>
+    <p>Select a loop to display natural numbers from 1 to a given number:</p>
+
+    <input type="number" id="num" placeholder="Enter a number" min="1">
+    <div>
+        <button onclick="displayWithForLoop()">For Loop</button>
+        <button onclick="displayWithWhileLoop()">While Loop</button>
+        <button onclick="displayWithDoWhileLoop()">Do-While Loop</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        function displayWithForLoop() {
+            const n = parseInt(document.getElementById('num').value);
+            let result = "Using For Loop:\n";
+
+            for (let i = 1; i <= n; i++) {
+                result += i + " ";
+            }
+
+            document.getElementById('output').innerText = result;
+        }
+
+        function displayWithWhileLoop() {
+            const n = parseInt(document.getElementById('num').value);
+            let i = 1;
+            let result = "Using While Loop:\n";
+
+            while (i <= n) {
+                result += i + " ";
+                i++;
+            }
+
+            document.getElementById('output').innerText = result;
+        }
+
+        function displayWithDoWhileLoop() {
+            const n = parseInt(document.getElementById('num').value);
+            let i = 1;
+            let result = "Using Do-While Loop:\n";
+
+            do {
+                result += i + " ";
+                i++;
+            } while (i <= n);
+
+            document.getElementById('output').innerText = result;
+        }
+    </script>
+
+</body>
+</html>

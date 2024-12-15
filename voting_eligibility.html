@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting Eligibility Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Voting Eligibility Checker</h1>
+  <p>Enter your age to check if you are eligible to vote.</p>
+  
+  <input type="number" id="ageInput" placeholder="Enter your age" />
+  <button onclick="checkEligibility()">Check Eligibility</button>
+  
+  <div class="result" id="result"></div>
+
+  <script>
+    function checkEligibility() {
+      const age = document.getElementById("ageInput").value;
+      const resultDiv = document.getElementById("result");
+
+      if (age === "") {
+        resultDiv.textContent = "Please enter your age!";
+        resultDiv.style.color = "red";
+        return;
+      }
+
+      if (isNaN(age) || age < 0) {
+        resultDiv.textContent = "Please enter a valid age.";
+        resultDiv.style.color = "red";
+        return;
+      }
+
+      if (age >= 18) {
+        resultDiv.textContent = "Congratulations! You are eligible to vote. 🗳️";
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.textContent = "Sorry, you are not eligible to vote yet. 😔";
+        resultDiv.style.color = "orange";
+      }
+    }
+  </script>
+</body>
+</html>
